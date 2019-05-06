@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon slot="icon-only" name="bonfire"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Proyectos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- Refresher -->
+
+
+    <!-- Proyectos -->
+    <app-proyectos [proyectos]="proyecto" ></app-proyectos>
+
+    <!-- InfiniteScroll -->
+    <ion-infinite-scroll threshold="150px" (ionInfinite)="siguientes($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando mas proyectos...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
