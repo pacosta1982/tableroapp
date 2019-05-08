@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resumen Proyecto</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+    <ion-card *ngFor="let p of proyecto">
+        <ion-card-header>
+          <ion-card-subtitle>{{p.data[0].sat}}</ion-card-subtitle>
+          <ion-card-title>{{p.data[0].nombre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>Departamento: {{p.data[0].departamento}}</p>
+            <p>Distrito: {{p.data[0].distrito}}</p>
+          </ion-card-content>
+        <ion-item href="#" class="activated">
+          <ion-icon name="home" slot="start"></ion-icon>
+          <ion-label>Cantidad de Viviendas</ion-label>
+          <ion-badge slot="end">{{p.data[0].viviendas}}</ion-badge> 
+        </ion-item>
+        <ion-item href="#">
+            <ion-icon name="analytics" slot="start"></ion-icon>
+            <ion-label>Avance</ion-label>
+            <ion-badge slot="end">{{p.data[0].avance}}</ion-badge>
+          </ion-item> 
+        
+          <ion-item class="activated">
+            <ion-icon name="warning" slot="start"></ion-icon>
+            <ion-label>Estado</ion-label>
+            <ion-badge slot="end">{{p.data[0].estado}}</ion-badge>
+          </ion-item>
+        
+          <ion-item>
+            <ion-icon name="walk" slot="start"></ion-icon>
+            <ion-label>Expediente</ion-label>
+            <ion-badge slot="end">{{p.data[0].expediente}}</ion-badge>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="globe" slot="start"></ion-icon>
+              <ion-label>Terreno: {{p.data[0].terreno}}</ion-label>
+            </ion-item>
+            <app-mapa  [coordenadas]="p.data[0].coordenadas"></app-mapa>
+      </ion-card> 
+      
+</ion-content> 

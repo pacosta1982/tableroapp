@@ -27,4 +27,33 @@ export interface Proyectos {
   id?: number;
   sat?: string;
   nombre?: string;
+  departamento?: string;
+  distrito?: string;
+  estado?: string;
+  avance?: string;
+  viviendas?: string;
+  expediente?: string;
+}
+
+export interface IProject {
+  data: IRegionDescription[];
+}
+
+
+export interface IRegionDescription {
+  id?: number;
+  sat?: string;
+  nombre?: string;
+  departamento?: string;
+  distrito?: string;
+  estado?: string;
+  avance?: string;
+  viviendas?: string;
+  expediente?: string;
+  coordenadas: mapacoordenadas[];
+}
+
+export interface mapacoordenadas{
+  lat?: string;
+  lon?: string;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { RespuestaProyectos } from '../interfaces/interfaces';
+import { IProject } from '../interfaces/interfaces';
 
 
 const URL = environment.url;
@@ -20,6 +21,11 @@ export class ProjectsService {
     this.paginaProyectos ++;
 
     return this.http.post<RespuestaProyectos>(`${ URL }/api/details?page=${ this.paginaProyectos}`,'');
+  }
+
+  showproject(id: string) {
+
+    return this.http.post<IProject>(`${ URL }/api/proyecto/${id}`,'');
   }
 
 

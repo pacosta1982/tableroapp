@@ -1,5 +1,5 @@
 <ion-list>
-  <ion-item *ngFor="let proyecto of proyectos">
+  <ion-item *ngFor="let proyecto of proyectos" routerLink="/showproyecto/{{proyecto.id}}" detail>
       <app-proyecto [proyecto]="proyecto">
       </app-proyecto>
   </ion-item>

@@ -22,7 +22,7 @@ export class Tab1Page implements OnInit {
 
     this.projectService.getProjects()
     .subscribe( resp => {
-      console.log(resp.data);
+      //console.log(resp.data);
       this.proyecto.push( ...resp.data );
       if (event) {
         event.target.complete();

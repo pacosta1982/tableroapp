@@ -3,18 +3,23 @@ import { CommonModule } from '@angular/common';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ProyectoComponent } from './proyecto/proyecto.component';
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
+import { MapaComponent } from './mapa/mapa.component';
 
 @NgModule({
   declarations: [
     ProyectosComponent,
-    ProyectoComponent
+    ProyectoComponent,
+    MapaComponent,
   ],
   exports:[
-    ProyectosComponent
+    ProyectosComponent,
+    MapaComponent
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    RouterModule
   ]
 })
 export class ComponentsModule { }
